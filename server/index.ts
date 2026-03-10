@@ -2,6 +2,10 @@ import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { serveStatic } from "./static";
 import { createServer } from "http";
+import session from "express-session";
+import MemoryStore from "memorystore";
+import { pool } from "./db";
+import connectPg from "connect-pg-simple";
 
 const app = express();
 const httpServer = createServer(app);
@@ -21,6 +25,31 @@ app.use(
 );
 
 app.use(express.urlencoded({ extended: false }));
+
+const MemoryStoreSession = MemoryStore(session);
+const PostgresStore = connectPg(session);
+
+const sessionStore = pool
+  ? new PostgresStore({
+    pool,
+    createTableIfMissing: true,
+  })
+  : new MemoryStoreSession({
+    checkPeriod: 86400000, // prune expired entries every 24h
+  });
+
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET || "manga-judging-secret",
+    resave: false,
+    saveUninitialized: false,
+    store: sessionStore,
+    cookie: {
+      secure: process.env.NODE_ENV === "production",
+      maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
+    },
+  }),
+);
 
 export function log(message: string, source = "express") {
   const formattedTime = new Date().toLocaleTimeString("en-US", {
