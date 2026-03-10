@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bangers&family=Comic+Neue:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    --primary: 0 100% 55%;
+    /* #ff1a1a */
+    --primary-foreground: 0 0% 100%;
+
+    --font-display: 'Bangers', system-ui, cursive;
+    --font-heading: 'Anton', sans-serif;
+    --font-body: 'Comic Neue', cursive;
+  }
+
+  body {
+    @apply bg-white text-black antialiased;
+    font-family: var(--font-body);
+    background-image: radial-gradient(#000000 1.5px, transparent 1.5px);
+    background-size: 24px 24px;
+    background-attachment: fixed;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+    @apply tracking-wide uppercase;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+    letter-spacing: 0.05em;
+  }
+
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  /* Comic UI Essentials */
+  .comic-border {
+    @apply border-4 border-black;
+  }
+
+  .comic-shadow {
+    box-shadow: 6px 6px 0px 0px #000;
+  }
+
+  .comic-shadow-red {
+    box-shadow: 6px 6px 0px 0px #ff1a1a;
+  }
+
+  .comic-shadow-sm {
+    box-shadow: 3px 3px 0px 0px #000;
+  }
+
+  .comic-panel {
+    @apply comic-border comic-shadow rounded-xl;
+  }
+
+  .speed-lines {
+    background: repeating-linear-gradient(90deg,
+        transparent,
+        transparent 20px,
+        rgba(0, 0, 0, 0.05) 20px,
+        rgba(0, 0, 0, 0.05) 22px);
+  }
+
+  .speed-lines-red {
+    background: repeating-linear-gradient(45deg,
+        transparent,
+        transparent 20px,
+        rgba(255, 26, 26, 0.1) 20px,
+        rgba(255, 26, 26, 0.1) 24px);
+  }
+
+  .speech-bubble {
+    position: relative;
+    @apply comic-border bg-white rounded-3xl p-4;
+  }
+
+  .speech-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 20px;
+    border-width: 20px 20px 0 0;
+    border-style: solid;
+    border-color: #000 transparent transparent transparent;
+    display: block;
+    width: 0;
+  }
+
+  .speech-bubble::before {
+    content: '';
+    position: absolute;
+    bottom: -13px;
+    left: 24px;
+    border-width: 16px 16px 0 0;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+    display: block;
+  }
+
+  /* Custom Range Input Styling */
+  input[type="range"]::-webkit-slider-runnable-track {
+    @apply h-3 bg-gray-200 rounded-lg border-2 border-black;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    @apply appearance-none h-6 w-6 bg-black rounded-full border-2 border-white cursor-pointer -mt-[6px];
+    box-shadow: 2px 2px 0px 0px #000;
+  }
+
+  input[type="range"]:hover::-webkit-slider-thumb {
+    @apply bg-[#ff1a1a];
+  }
+
+  /* Hide numeric input spin buttons */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+}

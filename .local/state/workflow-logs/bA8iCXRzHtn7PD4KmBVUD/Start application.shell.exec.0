@@ -1,0 +1,13 @@
+
+> rest-express@1.0.0 dev
+> NODE_ENV=development tsx server/index.ts
+
+[1G[0K[2m11:01:32 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m Re-optimizing dependencies because lockfile has changed
+11:01:32 AM [express] serving on port 5000
+11:01:55 AM [express] POST /api/judge/login 401 in 2ms :: {"message":"Invalid credentials"}
+11:02:03 AM [express] POST /api/judge/login 400 in 0ms :: {"message":"Bad request"}
+11:02:05 AM [express] POST /api/judge/login 400 in 1ms :: {"message":"Bad request"}
+11:02:06 AM [express] POST /api/judge/login 400 in 0ms :: {"message":"Bad request"}
+11:02:29 AM [express] POST /api/judge/login 400 in 1ms :: {"message":"Bad request"}
+11:03:46 AM [express] POST /api/judge/login 400 in 1ms :: {"message":"Bad request"}
+11:03:48 AM [express] POST /api/judge/login 400 in 1ms :: {"message":"Bad request"}

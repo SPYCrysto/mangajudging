@@ -1,0 +1,447 @@
+Manga-Themed Hackathon Judging & Attendance System UI
+
+Design a multi-page web application UI for a hackathon management system with a black-and-white manga / anime comic theme.
+
+The design must match an existing hackathon website called TechBlitz 2026 which uses:
+
+Manga comic panel layout
+
+Black & white design
+
+Red accent color (#ff1a1a)
+
+Comic sound effects
+
+Halftone dot textures
+
+Manga speech bubbles
+
+Thick comic borders
+
+Dramatic typography
+
+The UI should look like a manga story chapter where participants and judges progress through panels.
+
+🧭 SYSTEM OVERVIEW
+
+The system has two flows:
+
+1️⃣ Team Participation Flow (Attendance + Submission)
+2️⃣ Judge Evaluation Flow
+
+The system will be used during the hackathon event.
+
+👨‍💻 FLOW 1 — TEAM ATTENDANCE & PROJECT SUBMISSION
+
+Participants mark attendance at the start of the event.
+
+PAGE 1 — MARK ATTENDANCE
+
+Add a large manga style CTA button on the main website:
+
+Button Text
+[ MARK ATTENDANCE ]
+
+Style:
+
+Red manga action button
+
+Comic border
+
+Slight impact animation
+
+Hover effect like a manga punch panel
+
+Speech bubble near button:
+
+"Teams! Enter the battlefield!"
+
+Clicking the button opens the Team Registration Panel.
+
+PAGE 2 — TEAM INFORMATION FORM
+
+Title panel:
+
+“TEAM CHECK-IN PANEL”
+
+Subtitle:
+
+Confirm your presence and submit your project base.
+
+Layout style:
+
+A manga panel card centered.
+
+Form Fields
+
+Team Name
+Text input
+
+Domain
+Dropdown
+
+Agentic AI
+Vibeathon
+UI/UX Challenge
+
+Problem Statement (PS)
+Dropdown or text
+
+Lab / Room Assigned
+Dropdown
+
+Lab A
+Lab B
+Lab C
+Lab D
+
+GitHub Repository Link
+Text input
+
+Figma Design Link
+Text input
+
+Team Members
+Multi-input fields
+
+Member 1
+Member 2
+Member 3
+Member 4
+Submit Button
+[ ENTER THE ARENA ]
+
+Animation:
+
+Small manga burst effect when clicked.
+
+Backend Logic (Display Note)
+
+After submission:
+
+Store data:
+
+teamName
+domain
+lab
+problemStatement
+githubRepo
+figmaLink
+members
+timestamp
+
+GitHub / Figma links will later be sent to AI scoring system.
+
+🤖 AUTOMATED GIT SCORE
+
+Backend system calculates Git Score based on:
+
+commit frequency
+
+commit quality
+
+contributors
+
+activity
+
+Example display later:
+
+Git Activity Score: 18 / 20
+⚖️ FLOW 2 — JUDGE SYSTEM
+
+Judges will access the system through a hidden route.
+
+Example route:
+
+/judge-portal
+PAGE 3 — JUDGE LOGIN
+
+Title:
+
+“JUDGE ACCESS PANEL”
+
+Layout:
+
+Manga framed login card.
+
+Fields:
+
+Judge ID
+Password
+
+Button:
+
+[ ENTER JUDGEMENT ZONE ]
+
+Speech bubble:
+
+"Judge wisely."
+PAGE 4 — LAB SELECTION
+
+Title:
+
+“SELECT YOUR BATTLEFIELD”
+
+Display Lab Cards.
+
+Example cards:
+
+Lab A — Agentic AI
+Lab B — Agentic AI
+Lab C — Vibeathon
+Lab D — UI/UX Challenge
+
+Each card shows:
+
+Lab Name
+Domain
+Teams Present
+
+Card style:
+
+Comic panel with manga shadow.
+
+Clicking a card opens team list.
+
+PAGE 5 — TEAM LIST (PER LAB)
+
+Title:
+
+“TEAMS IN LAB A”
+
+Table or card grid.
+
+Columns:
+
+Team Name
+Domain
+PS
+Git Score
+Action
+
+Example:
+
+Team Alpha | Agentic AI | PS-1 | 18 | Evaluate
+
+Button:
+
+[ EVALUATE ]
+PAGE 6 — TEAM EVALUATION PANEL
+
+This page contains two horizontal sections.
+
+SECTION 1 — TEAM INFORMATION
+
+Panel title:
+
+“TEAM DATA”
+
+Display:
+
+Team Name
+Domain
+Problem Statement
+Lab
+GitHub Repository
+Figma Link
+Git Activity Score
+
+Git score should be highlighted.
+
+Example:
+
+Git Activity Score: 18 / 20
+
+Style:
+
+Manga stat card.
+
+SECTION 2 — JUDGE SCORING PANEL
+
+Title:
+
+“JUDGE SCORECARD”
+
+Table:
+
+Criteria | Score
+Innovation
+Technical Complexity
+UI / UX
+Practical Impact
+Presentation
+TOTAL
+
+Score inputs:
+
+Range 0–10
+
+Total column:
+
+Auto-calculated.
+
+Example row:
+
+Innovation [input]
+Technical Complexity [input]
+UI/UX [input]
+Practical Impact [input]
+Presentation [input]
+
+TOTAL = auto
+Save Button
+[ LOCK SCORE ]
+
+Animation:
+
+Comic effect:
+
+"CLACK!"
+PAGE 7 — LAB LEADERBOARD
+
+After judging all teams in that lab.
+
+Title:
+
+“LAB LEADERBOARD”
+
+Table:
+
+Rank
+Team Name
+Git Score
+Judge Score
+Total Score
+Status
+
+Top 5 teams highlighted.
+
+Highlight style:
+
+red border
+
+manga burst effect
+
+Example:
+
+#1 Team Alpha 48 FINALIST
+#2 Team Nova 46 FINALIST
+#3 Team Cipher 44 FINALIST
+#4 Team Byte 43 FINALIST
+#5 Team Omega 42 FINALIST
+🏆 ROUND 1 GLOBAL DOMAIN LEADERBOARD
+
+This page selects final teams for Round 2.
+
+Title:
+
+“FINALISTS FOR ROUND 2”
+
+Layout:
+
+Three sections.
+
+SECTION 1 — AGENTIC AI
+
+Display:
+
+Top 5 teams from all labs combined.
+
+Example:
+
+Rank | Team | Lab | Score
+SECTION 2 — VIBEATHON
+
+Same layout.
+
+SECTION 3 — UI/UX CHALLENGE
+
+Same layout.
+
+Logic:
+
+Each domain gathers top 5 teams across all labs.
+
+Example logic:
+
+3 labs
+Each lab → top 5 teams
+Total candidates = 15
+
+Sort by score
+Select top 5
+🎨 VISUAL STYLE RULES
+
+Use:
+
+Colors
+Background: White
+Panels: White with thick black borders
+Primary Accent: Red (#ff1a1a)
+Text: Black
+Manga Elements
+
+Include:
+
+comic borders
+
+halftone textures
+
+speed lines
+
+speech bubbles
+
+manga sound effects
+
+Examples:
+
+"ZOOM!"
+"THWACK!"
+"POWER!"
+"SCORE!"
+Typography
+
+Use manga fonts:
+
+Bangers
+Anton
+Anime Ace
+Oswald
+⚡ UI ANIMATIONS
+
+Add:
+
+Hover card lift
+Button impact animation
+Score entry pop effect
+Leaderboard glow effect
+
+📱 RESPONSIVE DESIGN
+
+Desktop → full table
+
+Tablet → scrollable tables
+
+Mobile → stacked cards
+
+💻 OUTPUT REQUIREMENTS
+
+Generate:
+
+1️⃣ Full UI wireframes
+2️⃣ High fidelity manga themed UI
+3️⃣ Component structure
+4️⃣ Page navigation flow
+5️⃣ Responsive layouts
+
+⭐ OPTIONAL ADVANCED FEATURES
+
+If possible add UI for:
+
+Live score updates
+
+Export leaderboard CSV
+
+Judge progress tracker
+
+Team evaluation completion indicator
